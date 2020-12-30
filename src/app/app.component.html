@@ -1,0 +1,22 @@
+
+  <div class="row justify-content-center">
+    <div *ngFor="let detector of detectors; let i=index">
+    <div class="col-sm col-md-6 col-lg-3 col-xl-3 mb-4">
+      <div class="card" style="width: 18rem;" [ngClass]="{'bg-success': detector.status == true, 'bg-danger': detector.status == false}">
+        <div class="card-body">
+          <h5 class="card-title">id: {{ detector.id }} </h5>
+          <p class="card-text">{{ detector.name }}</p>
+          <a href="#" class="btn btn-primary" (click)="DeleteDet(i)">Удалить</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+  <div class="row justify-content-center">
+      <h1>Добавить датчик</h1>
+      <input class="form-control" type="text" #inputvalue placeholder="Введите название датчика"> 
+      <button type="submit" class="btn btn-primary mb-2" (click)="NewDet(inputvalue)">Добавить</button>
+  </div>
+</div>
+
